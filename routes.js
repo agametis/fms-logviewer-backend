@@ -1,7 +1,7 @@
 const { readfile } = require('./utils')
 
 module.exports = (app) => {
-  // Root
+  // Root als Info Route
   app.route('/').get((req, res) => {
     res.status(404)
     console.log('INF0: "/" wurde aufgerufen')
