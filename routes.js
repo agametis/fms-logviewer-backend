@@ -65,7 +65,7 @@ module.exports = (app) => {
 
     readfile(filePathDapi, isDAPI)
       .then((data) => {
-        // console.log(filePathEvent)
+        // console.log(filePathDapi)
         return res.status(200).json(data)
       })
       .catch((err) => {

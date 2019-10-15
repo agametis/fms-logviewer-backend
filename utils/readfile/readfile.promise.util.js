@@ -37,7 +37,7 @@ const readfile = (fileName, isDAPI) => {
             rowType = oneRow[2]
             rowNumber = oneRow[1]
             let userName = oneRow[4] ? oneRow[4] : '-'
-            rowMessage = `${userName} ${oneRow[5]} ${oneRow[6]}`
+            if (oneRow[5] === undefined) { rowMessage = '' } else { rowMessage = `${ userName } ${ oneRow[5] } ${ oneRow[6] }` }
           } else {
             // einzelne Werte der Zeile
             // Access und Event
