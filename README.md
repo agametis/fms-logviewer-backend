@@ -56,7 +56,7 @@ Project Link: [https://github.com/agametis/fms-logviewer-backend](https://github
 ### Inbetriebnahme
 
 1. Download Zip-Datei von hier
-2. Entpacke in ein Verzeichnis an beliebiger Stelle auf dem Rechner wo FileMaker Server installiert ist
+2. Entpacke in ein Verzeichnis an beliebiger Stelle auf dem Rechner, auf dem der FileMaker Server installiert ist
 3. Ersetze Zertifikat-Dateien im "encryption" Unterverzeichnis
 4. Datei ".env-leer" auf der Kommandozeile in ".env" umbenennen (ren .env-leer .env)
 5. Datei ".env" anpassen
