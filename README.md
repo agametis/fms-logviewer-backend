@@ -24,7 +24,7 @@ Since FileMaker Server 17 there is no convinient way for reading the log files. 
 ### Setup
 
 1. Download zip file from here
-2. Unpack the file into a directory at any location
+2. Unpack the file into a directory at any location on the machine where FileMaker Server is installed
 3. Replace certificate files in the "encryption" subdirectory
 4. Rename file ".env-leer" to ".env" on the command line (ren .env-leer .env)
 5. Adapt file ".env"
@@ -56,7 +56,7 @@ Project Link: [https://github.com/agametis/fms-logviewer-backend](https://github
 ### Inbetriebnahme
 
 1. Download Zip-Datei von hier
-2. Entpacke in ein Verzeichnis an beliebiger Stelle
+2. Entpacke in ein Verzeichnis an beliebiger Stelle auf dem Rechner wo FileMaker Server installiert ist
 3. Ersetze Zertifikat-Dateien im "encryption" Unterverzeichnis
 4. Datei ".env-leer" auf der Kommandozeile in ".env" umbenennen (ren .env-leer .env)
 5. Datei ".env" anpassen
