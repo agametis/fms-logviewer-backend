@@ -16,7 +16,7 @@
 
 The Project is the backend for the FileMaker Server LogViewer.
 
-Since FileMaker Server 17 there is no convinient way for reading the log files. This porject helps to overcome this circumstance.
+Since FileMaker Server 17 there is no convenient way for reading the log files. This project helps to overcome this circumstance.
 
 ## Instructions
 
