@@ -3,13 +3,12 @@
 ## Table of Contents
 
 - [About the Project](#about-the-project)
-- [English Instructions](#english-instructions)
+- [Instructions](#instructions)
   - [Setup](#setup)
   - [Additional Info](#additional-info)
 - [License](#license)
 - [Contact](#contact)
-- [Acknowledgements](#acknowledgements)
-- [Deutche Anleitung](#deutche-anleitung)
+- [Anleitung](#anleitung)
   - [Inbetriebnahme](#inbetriebnahme)
   - [Allgemeine Infos](#allgemeine-infos)
 
@@ -19,7 +18,7 @@ The Project is the backend for the FileMaker Server LogViewer.
 
 Since FileMaker Server 17 there is no convinient way for reading the log files. This porject helps to overcome this circumstance.
 
-## English Instructions
+## Instructions
 
 ### Setup
 
@@ -51,7 +50,7 @@ Adam Augustin - [@agametis](https://twitter.com/agametis) - mail.github@agametis
 
 Project Link: [https://github.com/agametis/fms-logviewer-backend](https://github.com/agametis/fms-logviewer-backend)
 
-## Deutche Anleitung
+## Anleitung
 
 ### Inbetriebnahme
 
