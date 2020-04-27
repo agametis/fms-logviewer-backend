@@ -61,7 +61,7 @@ Project Link: [https://github.com/agametis/fms-logviewer-backend](https://github
 5. Datei ".env" anpassen
    - Passwort fürs Zertifikat
    - eventuell Port
-6. "server.js" mit korrekten Zertifiaktsdateien anpassen. Alternativ können die Dateien im Verzeichnis "encryption" umbenannt werden, dann entfällt dieser Schritt
+6. "server.js" mit korrekten Zertifikatsdateien anpassen. Alternativ können die Dateien im Verzeichnis "encryption" umbenannt werden, dann entfällt dieser Schritt
    - Konstanten "key", "cert" und "ca"
 7. "npm install" im Hauptverzeichnis der Anwendung, um alle Node-Module zu installieren
 8. mit "npm start" den Server starten
