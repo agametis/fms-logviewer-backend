@@ -1,10 +1,10 @@
 const { readfile } = require('./utils')
 
 module.exports = (app) => {
-  // Root als Info Route
+  // root node as info route
   app.route('/').get((req, res) => {
     res.status(404)
-    console.log('INF0: "/" wurde aufgerufen')
+    console.log('INF0: "/" was accessed')
   })
 
   const platform = process.platform
@@ -14,18 +14,18 @@ module.exports = (app) => {
   let filePathDapi = ''
 
   if (platform === 'win32') {
-    filePathAccess = `${process.env.LOGFILES_ROOT_PATH_WIN}/${process.env.FILE_ACCESS}`
-    filePathEvent = `${process.env.LOGFILES_ROOT_PATH_WIN}/${process.env.FILE_EVENT}`
-    filePathDapi = `${process.env.LOGFILES_ROOT_PATH_WIN}/${process.env.FILE_DAPI}`
+    filePathAccess = `${ process.env.LOGFILES_ROOT_PATH_WIN }/${ process.env.FILE_ACCESS }`
+    filePathEvent = `${ process.env.LOGFILES_ROOT_PATH_WIN }/${ process.env.FILE_EVENT }`
+    filePathDapi = `${ process.env.LOGFILES_ROOT_PATH_WIN }/${ process.env.FILE_DAPI }`
   } else {
-    filePathAccess = `${process.env.LOGFILES_ROOT_PATH_MAC}/${process.env.FILE_ACCESS}`
-    filePathEvent = `${process.env.LOGFILES_ROOT_PATH_MAC}/${process.env.FILE_EVENT}`
-    filePathDapi = `${process.env.LOGFILES_ROOT_PATH_MAC}/${process.env.FILE_DAPI}`
+    filePathAccess = `${ process.env.LOGFILES_ROOT_PATH_MAC }/${ process.env.FILE_ACCESS }`
+    filePathEvent = `${ process.env.LOGFILES_ROOT_PATH_MAC }/${ process.env.FILE_EVENT }`
+    filePathDapi = `${ process.env.LOGFILES_ROOT_PATH_MAC }/${ process.env.FILE_DAPI }`
   }
 
   app.use('/access', (req, res) => {
-    const jetzt = new Date()
-    console.log(`${jetzt} "/access" wurde aufgerufen`)
+    const now = new Date()
+    console.log(`${ now } "/access" was accessed`)
 
     const isDAPI = false
 
@@ -41,8 +41,8 @@ module.exports = (app) => {
   })
 
   app.use('/event', (req, res) => {
-    const jetzt = new Date()
-    console.log(`${jetzt} "/event" wurde aufgerufen`)
+    const now = new Date()
+    console.log(`${ now } "/event" was accessed`)
 
     const isDAPI = false
 
@@ -58,8 +58,8 @@ module.exports = (app) => {
   })
 
   app.use('/dapi', (req, res) => {
-    const jetzt = new Date()
-    console.log(`${jetzt} "/dapi" wurde aufgerufen`)
+    const now = new Date()
+    console.log(`${ now } "/dapi" was accessed`)
 
     const isDAPI = true
 

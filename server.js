@@ -5,7 +5,7 @@ const express = require('./node_modules/express')
 const cors = require('./node_modules/cors')
 const routes = require('./routes')
 
-// lade Variablen
+// load variables from .env file
 require('dotenv').config()
 
 const key = fs.readFileSync('encryption/serverKey.pem')
@@ -23,19 +23,19 @@ const httpsOptions = {
 // definiere express server
 const app = express()
 
-// Wegen des folgenden Fehlers
+// due to the error
 /*
 Access to XMLHttpRequest at 'http://localhost:3000/access' from origin 'http://localhost:3001' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
 */
-// wird cors geladen
+// cors is used
 app.use(cors())
 
 const port = process.env.PORT || 8000
 
-// lade Routen
+// load routes
 routes(app)
 
-// starte express Server
+// start express server
 https.createServer(httpsOptions, app).listen(port, () => {
-  console.log(`Server unter https://localhost:${port} gestartet`)
+  console.log(`log-viewer-backend listening at https://localhost:${ port }`)
 })
