@@ -70,4 +70,4 @@ Project Link: [https://github.com/agametis/fms-logviewer-backend](https://github
 
 - Die Firewall des Betriebssystem bzw. des Netztwerkes muss die Kommunikation auf dem Port (standard ist 3050) zulassen, welcher in ".env" definiert ist
 - Der User, unter dem der Node.js Server läuft, muss Leserechte für das "Logs"-Verzeichnis des FileMaker Server haben
-- Zum Testen der Funktionalität kann lokal die Adresse "https://localhost:3050/event" im Browser aufrufen werden. Als Antwort muss man der Inhalt von "Event.log" im JSON-Format im Browser sehen
+- Zum Testen der Funktionalität kann lokal die Adresse "https://localhost:3050/event" im Browser aufrufen werden. Als Antwort muss man den Inhalt von "Event.log" im JSON-Format im Browser sehen
