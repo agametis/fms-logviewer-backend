@@ -1,5 +1,8 @@
 const fsPromises = require('fs').promises
 
+// more info under
+// https://en.wikipedia.org/wiki/Newline#Representation
+
 const CR = '\r'
 const LF = '\n'
 const CRLF = CR + LF // '\r\n'
