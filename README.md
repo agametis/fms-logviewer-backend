@@ -59,7 +59,7 @@ Project Link: [https://github.com/agametis/fms-logviewer-backend](https://github
 3. Ersetze Zertifikat-Dateien im "encryption" Unterverzeichnis
 4. Datei ".env-example" auf der Kommandozeile in ".env" umbenennen (ren .env-leer .env)
 5. Datei ".env" anpassen
-   - Passwort fürs Zertifikat
+   - Passwort fürs den privaten Schlüssel
    - eventuell Port, wenn die Nutzung von 3050 nicht möglich ist
 6. "server.js" mit korrekten Zertifikatsdateien anpassen. Alternativ können die Dateien im Verzeichnis "encryption" umbenannt werden, dann entfällt dieser Schritt
    - Konstanten "key", "cert" und "ca" ("key" ist der private Schlüssel, "cert" ist das Zertifikat, "ca" ist das Zwischenzertifikate der CA)
