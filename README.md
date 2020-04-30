@@ -27,11 +27,11 @@ Since FileMaker Server 17 there is no convenient way for reading the log files. 
 3. Replace certificate files in the "encryption" subdirectory
 4. Rename file ".env-example" to ".env" on the command line (ren .env-leer .env)
 5. Adapt file ".env"
-   - Password for certificate
-   - possibly port
+   - password for private key
+   - if needed, change port
 6. Customize "server.js" with correct certificate files. Alternatively, the files in the "encryption" directory can be renamed, then this step is omitted.
-   - Constants "key", "cert" and "ca"
-7. Use "npm install" in the root directory of the application to install all node modules dependencies
+   - Constants "key", "cert" and "ca" ("key" is the private key, "cert" is the certificate, "ca" is the intermidiate certificate from the CA)
+7. Run "npm install" in the root directory of the application to install all node modules dependencies
 8. Start the server with "npm start
 
 ### Additional Info
@@ -60,11 +60,11 @@ Project Link: [https://github.com/agametis/fms-logviewer-backend](https://github
 4. Datei ".env-example" auf der Kommandozeile in ".env" umbenennen (ren .env-leer .env)
 5. Datei ".env" anpassen
    - Passwort fürs Zertifikat
-   - eventuell Port
+   - eventuell Port, wenn die Nutzung von 3050 nicht möglich ist
 6. "server.js" mit korrekten Zertifikatsdateien anpassen. Alternativ können die Dateien im Verzeichnis "encryption" umbenannt werden, dann entfällt dieser Schritt
-   - Konstanten "key", "cert" und "ca"
+   - Konstanten "key", "cert" und "ca" ("key" ist der private Schlüssel, "cert" ist das Zertifikat, "ca" ist das Zwischenzertifikate der CA)
 7. "npm install" im Hauptverzeichnis der Anwendung, um alle Node-Module zu installieren
-8. mit "npm start" den Server starten
+8. Mit "npm start" wird der Server gestartet
 
 ### Allgemeine Infos
 
