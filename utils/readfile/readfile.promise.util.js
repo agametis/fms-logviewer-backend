@@ -1,6 +1,11 @@
 const fsPromises = require('fs').promises
 
-const CRLF = '\r\n'
+const LF = '\r'
+const CR = '\n'
+const CRLF = LF + CR // '\r\n'
+
+const platform = process.platform
+
 const TAB = '\t'
 
 const readfile = (fileName, isDAPI) => {
@@ -14,38 +19,45 @@ const readfile = (fileName, isDAPI) => {
         return data
       })
       .then((data) => {
-        const splited = data.toString().split(CRLF)
+        // const splited = data.toString().split(CRLF)
+
+        let splited
+        // text file on mac and windows has different line ending
+        if (platform === 'win32') {
+          splited = data.toString().split(CRLF)
+        } else {
+          splited = data.toString().split(LF)
+        }
         // console.log(splited)
         return splited
       })
       .then((data) => {
         const res = data.map((row) => {
-          // eine Zeile
+          // one row of the file
           const oneRow = row.split(TAB)
 
-          // Initialisierung
-          let rowTS = new Date(oneRow[0]) // TS Format wird ISO-konform gemacht
+          // init
+          let rowTS = new Date(oneRow[0]) // do timestamp ISO-conform
           let rowType = ''
           let rowNumber = ''
           let rowAddress = oneRow[3]
           let rowMessage = ''
 
           if (isDAPI) {
-            // einzelne Werte der Zeile
-            // DAPI hat eine andere Struktur als Access und Event
+            // DAPI has different structure than Access and Event
 
             rowType = oneRow[2]
             rowNumber = oneRow[1]
             let userName = oneRow[4] ? oneRow[4] : '-'
             if (oneRow[5] === undefined) { rowMessage = '' } else { rowMessage = `${ userName } ${ oneRow[5] } ${ oneRow[6] }` }
           } else {
-            // einzelne Werte der Zeile
+            // single values
             // Access und Event
             rowType = oneRow[1]
             rowNumber = oneRow[2]
             rowMessage = oneRow[4]
           }
-          // eine Zeile als Objekt
+          // one row as JS object
           let dataObj = {
             ts: rowTS,
             type: rowType,
