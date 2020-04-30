@@ -1,8 +1,8 @@
 const fsPromises = require('fs').promises
 
-const LF = '\r'
-const CR = '\n'
-const CRLF = LF + CR // '\r\n'
+const CR = '\r'
+const LF = '\n'
+const CRLF = CR + LF // '\r\n'
 
 const platform = process.platform
 
