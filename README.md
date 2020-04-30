@@ -25,10 +25,10 @@ Since FileMaker Server 17 there is no convenient way for reading the log files. 
 1. Download zip file from here
 2. Unpack the file into a directory at any location on the machine where FileMaker Server is installed
 3. Replace certificate files in the "encryption" subdirectory
-4. Rename file ".env-example" to ".env" on the command line (ren .env-leer .env)
+4. Rename file ".env-example" to ".env" on the command line (on Windows: ren .env-example .env, on MacOS: mv .env-example .env)
 5. Adapt file ".env"
    - password for private key
-   - if needed, change port
+   - if needed, change port, if 3050 can not be used
 6. Customize "server.js" with correct certificate files. Alternatively, the files in the "encryption" directory can be renamed, then this step is omitted.
    - Constants "key", "cert" and "ca" ("key" is the private key, "cert" is the certificate, "ca" is the intermidiate certificate from the CA)
 7. Run "npm install" in the root directory of the application to install all node modules dependencies
@@ -57,7 +57,7 @@ Project Link: [https://github.com/agametis/fms-logviewer-backend](https://github
 1. Download Zip-Datei von hier
 2. Entpacke in ein Verzeichnis an beliebiger Stelle auf dem Rechner, auf dem der FileMaker Server installiert ist
 3. Ersetze Zertifikat-Dateien im "encryption" Unterverzeichnis
-4. Datei ".env-example" auf der Kommandozeile in ".env" umbenennen (ren .env-leer .env)
+4. Datei ".env-example" auf der Kommandozeile in ".env" umbenennen (unter Windows: ren .env-example .env, unter MacOS: vm .env-example .env)
 5. Datei ".env" anpassen
    - Passwort fürs den privaten Schlüssel
    - eventuell Port, wenn die Nutzung von 3050 nicht möglich ist
