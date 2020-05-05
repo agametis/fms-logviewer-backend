@@ -40,7 +40,7 @@ vm .env-example .env
 ```
 
 5. Adapt file ".env"
-   - password for private key
+   - password for private key ("PASSPHRASE")
    - if needed, change port, if 3050 can not be used
 6. Customize "server.js" with correct certificate files. Alternatively, the files in the "encryption" directory can be renamed, then this step is omitted.
    - Constants "key", "cert" and "ca" ("key" is the private key, "cert" is the certificate, "ca" is the intermidiate certificate from the CA)
@@ -93,7 +93,7 @@ vm .env-example .env
 ```
 
 5. Datei ".env" anpassen
-   - Passwort fürs den privaten Schlüssel
+   - Passwort fürs den privaten Schlüssel ("PASSPHRASE")
    - eventuell Port, wenn die Nutzung von 3050 nicht möglich ist
 6. "server.js" mit korrekten Zertifikatsdateien anpassen. Alternativ können die Dateien im Verzeichnis "encryption" umbenannt werden, dann entfällt dieser Schritt
    - Konstanten "key", "cert" und "ca" ("key" ist der private Schlüssel, "cert" ist das Zertifikat, "ca" ist das Zwischenzertifikate der CA)
@@ -111,6 +111,6 @@ npm start
 
 ### Allgemeine Infos
 
-- Die Firewall des Betriebssystem bzw. des Netztwerkes muss die Kommunikation auf dem Port (standard ist 3050) zulassen, welcher in ".env" definiert ist
+- Die Firewall des Betriebssystems bzw. des Netztwerkes muss die Kommunikation auf dem Port (standard ist 3050) zulassen, welcher in ".env" definiert ist
 - Der User, unter dem der Node.js Server läuft, muss Leserechte für das "Logs"-Verzeichnis des FileMaker Server haben
 - Zum Testen der Funktionalität kann lokal die Adresse "https://localhost:3050/event" im Browser aufrufen werden. Als Antwort muss man den Inhalt von "Event.log" im JSON-Format im Browser sehen
