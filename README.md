@@ -22,20 +22,25 @@ Since FileMaker Server 17 there is no convenient way for reading the log files. 
 
 ### Setup
 
-1. Download zip file from here
-2. Unpack the file into a directory at any location on the machine where FileMaker Server is installed
-3. Replace certificate files in the "encryption" subdirectory
+1. Download zip file from here or
+
+```bash
+git clone https://github.com/agametis/fms-logviewer-backend.git
+```
+
+2. Unpack the file into a directory at any location on the machine where FileMaker Server is installed or go to the folder created by <code>git</code>
+3. Replace or modify all files in the "encryption" subdirectory
 4. Rename file ".env-example" to ".env" on the command line
 
 - on Windows:
 
-```
+```bash
 ren .env-example .env
 ```
 
 - on MacOS:
 
-```
+```bash
 vm .env-example .env
 ```
 
@@ -46,13 +51,13 @@ vm .env-example .env
    - Constants "key", "cert" and "ca" ("key" is the private key, "cert" is the certificate, "ca" is the intermidiate certificate from the CA)
 7. To install all node modules dependencies run in the root directory of the application
 
-```
+```bash
 npm install
 ```
 
 8. Start the server with
 
-```
+```bash
 npm start
 ```
 
@@ -76,19 +81,24 @@ Project Link: [https://github.com/agametis/fms-logviewer-backend](https://github
 
 ### Inbetriebnahme
 
-1. Download Zip-Datei von hier
-2. Entpacke in ein Verzeichnis an beliebiger Stelle auf dem Rechner, auf dem der FileMaker Server installiert ist
-3. Ersetze Zertifikat-Dateien im "encryption" Unterverzeichnis
+1. Download Zip-Datei von hier oder
+
+```bash
+git clone https://github.com/agametis/fms-logviewer-backend.git
+```
+
+2. Entpacke in ein Verzeichnis an beliebiger Stelle auf dem Rechner, auf dem der FileMaker Server installiert ist oder gehe in das mit <code>git</code> erzeugte Verzeichnis
+3. Ersetze/bearbeite alle Dateien im "encryption" Unterverzeichnis
 4. Im Hauptverzeichnis der Anwendung die Datei ".env-example" auf der Kommandozeile in ".env" umbenennen
 - unter Windows:
 
-```
+```bash
 ren .env-example .env
 ```
 
 - unter MacOS:
 
-```
+```bash
 vm .env-example .env
 ```
 
@@ -99,13 +109,13 @@ vm .env-example .env
    - Konstanten "key", "cert" und "ca" ("key" ist der private Schlüssel, "cert" ist das Zertifikat, "ca" ist das Zwischenzertifikate der CA)
 7. Im Hauptverzeichnis der Anwendung alle Node-Module installieren
 
-```
+```bash
 npm install
 ```
 
 8. Server starten mit
 
-```
+```bash
 npm start
 ```
 
