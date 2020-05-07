@@ -99,7 +99,7 @@ ren .env-example .env
 - unter MacOS:
 
 ```bash
-vm .env-example .env
+mv .env-example .env
 ```
 
 5. Datei ".env" anpassen
