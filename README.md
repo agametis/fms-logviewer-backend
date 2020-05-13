@@ -38,7 +38,7 @@ git clone https://github.com/agametis/fms-logviewer-backend.git
 ren .env-example .env
 ```
 
-- on MacOS:
+- on macOS:
 
 ```bash
 vm .env-example .env
