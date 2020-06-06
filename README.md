@@ -3,8 +3,8 @@
 ## Table of Contents
 
 - [About the Project](#about-the-project)
+- [Prerequirements](#prerequirements)
 - [Instructions](#instructions)
-  - [Prerequirements](#prerequirements)
   - [Setup](#setup)
   - [Additional Info](#additional-info)
 - [License](#license)
@@ -19,11 +19,11 @@ The Project is the backend for the FileMaker Server LogViewer.
 
 Since FileMaker Server 17 there is no convenient way for reading the log files. This project helps to overcome this circumstance.
 
-## Instructions
-
-### Prerequirements
+## Prerequirements
 
 Node.js >= 12.x
+
+## Instructions
 
 ### Setup
 
