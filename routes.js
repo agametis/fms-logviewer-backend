@@ -17,6 +17,10 @@ module.exports = (app) => {
     filePathAccess = `${ process.env.LOGFILES_ROOT_PATH_WIN }/${ process.env.FILE_ACCESS }`
     filePathEvent = `${ process.env.LOGFILES_ROOT_PATH_WIN }/${ process.env.FILE_EVENT }`
     filePathDapi = `${ process.env.LOGFILES_ROOT_PATH_WIN }/${ process.env.FILE_DAPI }`
+  } else if (platform === 'linux') {
+    filePathAccess = `${ process.env.LOGFILES_ROOT_PATH_LINUX }/${ process.env.FILE_ACCESS }`
+    filePathEvent = `${ process.env.LOGFILES_ROOT_PATH_LINUX }/${ process.env.FILE_EVENT }`
+    filePathDapi = `${ process.env.LOGFILES_ROOT_PATH_LINUX }/${ process.env.FILE_DAPI }`
   } else {
     filePathAccess = `${ process.env.LOGFILES_ROOT_PATH_MAC }/${ process.env.FILE_ACCESS }`
     filePathEvent = `${ process.env.LOGFILES_ROOT_PATH_MAC }/${ process.env.FILE_EVENT }`
