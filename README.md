@@ -114,13 +114,13 @@ firewall-cmd --zone=public --permanent --add-port=3050/tcp
 
 > In case, the port should not be open to the public, you need to apply the rule to your preferd zone.
 
-4. apply the new rule
+4. Apply the new rule
 
 ```bash
 firewall-cmd --reload
 ```
 
-5. check the status
+5. Check the status
 
 ```bash
 firewall-cmd --list-all
@@ -137,6 +137,23 @@ firewall-cmd --list-all
 ```
 
 The new rule is permanently stored, so a reboot of the Linux server preserves the new rule.
+
+**Remark** for command <code>iptables</code>. With the command <code>iptables -L</code> you will get
+
+```bash
+...
+Chain IN_public_allow (1 references)
+target     prot opt source               destination
+ACCEPT     tcp  --  anywhere             anywhere             tcp dpt:ssh ctstate NEW
+ACCEPT     tcp  --  anywhere             anywhere             tcp dpt:http ctstate NEW
+ACCEPT     tcp  --  anywhere             anywhere             tcp dpt:https ctstate NEW
+ACCEPT     tcp  --  anywhere             anywhere             tcp dpt:5003 ctstate NEW
+ACCEPT     tcp  --  anywhere             anywhere             tcp dpt:16000 ctstate NEW
+ACCEPT     tcp  --  anywhere             anywhere             tcp dpt:2399 ctstate NEW
+ACCEPT     tcp  --  anywhere             anywhere             tcp dpt:gds-db ctstate NEW
+...
+```
+where <code>gds-db</code> is indicating the open port 3050.
 
 
 ### Additional Info
