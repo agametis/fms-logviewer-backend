@@ -6,11 +6,13 @@
 - [Prerequirements](#prerequirements)
 - [Instructions](#instructions)
   - [Setup](#setup)
+  - [Firewall on Linux](#firewall-on-linux)
   - [Additional Info](#additional-info)
 - [License](#license)
 - [Contact](#contact)
 - [Anleitung](#anleitung)
   - [Inbetriebnahme](#inbetriebnahme)
+  - [Firewall unter Linux](#firewall-unter-linux)
   - [Allgemeine Infos](#allgemeine-infos)
 
 ## About the Project
@@ -18,6 +20,8 @@
 The Project is the backend for the FileMaker Server LogViewer.
 
 Since FileMaker Server 17 there is no convenient way for reading the log files. This project helps to overcome this circumstance.
+
+**Update**: Since FileMaker Server 19.3.* there is a possibility to read and analyze log files directly in the FileMaker Server user interface. In my opinion, it is still not a good way to do it.
 
 ## Prerequirements
 
@@ -65,6 +69,75 @@ npm install
 ```bash
 npm start
 ```
+
+### Firewall on Linux
+
+In the standard configuration port 3050 is usually not open for incomming traffic. Therefore, you need to add rules to your firewall configuration. At the moment, FileMaker Server is running on Ubuntu 18.04 LTS. To open port 3050 in the firewall, the following procedure is recommended:
+
+1. Open a super user session in your terminal on the server
+
+```bash
+sudo su
+```
+
+2. Check if port 3050 is free
+
+```bash
+firewall-cmd --list-all
+```
+
+In the output you will see the missing port 3050
+
+```bash
+public
+  target: default
+  icmp-block-inversion: no
+  interfaces:
+  sources:
+  services: ssh dhcpv6-client
+  ports: 80/tcp 443/tcp 5003/tcp 16000/tcp 2399/tcp
+  protocols:
+  masquerade: no
+  forward-ports:
+  source-ports:
+  icmp-blocks:
+  rich rules:
+```
+
+> As you can see, port 3050 is not open
+
+3. To open port 3050 use
+
+```bash
+firewall-cmd --zone=public --permanent --add-port=3050/tcp
+```
+
+> In case, the port should not be open to the public, you need to apply the rule to your preferd zone.
+
+4. apply the new rule
+
+```bash
+firewall-cmd --reload
+```
+
+5. check the status
+
+```bash
+firewall-cmd --list-all
+```
+
+> The output lists the newly open port 3050.
+
+```bash
+...
+  services: ssh dhcpv6-client
+  ports: 80/tcp 443/tcp 5003/tcp 16000/tcp 2399/tcp 3050/tcp
+  protocols:
+...
+```
+
+The new rule is permanently stored, so a reboot of the Linux server preserves the new rule.
+
 
 ### Additional Info
 
@@ -123,6 +196,9 @@ npm install
 ```bash
 npm start
 ```
+### Firewall unter Linux
+
+Im Moment läuft FileMaker Server auf Ubuntu 18.04 LTS. In der Standardkonfiguration is der Port 3050 geschlossen. Um den Port 3050 in der Firewall zu öffnen, siehe die Anleitung [oben](#firewall-on-linux).
 
 ### Allgemeine Infos
 
