@@ -112,7 +112,7 @@ public
 firewall-cmd --zone=public --permanent --add-port=3050/tcp
 ```
 
-> In case, the port should not be open to the public, you need to apply the rule to your preferd zone.
+> In case, the port should not be open to the public, you need to apply the rule to your preferred zone.
 
 4. Apply the new rule
 
