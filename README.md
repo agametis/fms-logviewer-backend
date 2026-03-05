@@ -1,4 +1,4 @@
-# fms-logviewer-backend
+# DEPRECATED: fms-logviewer-backend
 
 ## Table of Contents
 
@@ -17,11 +17,11 @@
 
 ## About the Project
 
-The Project is the backend for the [FileMaker Server LogViewer](https://github.com/agametis/fms-logviewer-frontend).
+⛔️ DEPRECATED: The Project is the backend for the [FileMaker Server LogViewer](https://github.com/agametis/fms-logviewer-frontend).
 
 Since FileMaker Server 17 there is no convenient way for reading the log files. This project helps to overcome this circumstance.
 
-**Update**: Since FileMaker Server 19.3.* there is a possibility to read and analyze log files directly in the FileMaker Server user interface. In my opinion, it is still not a good way to do it.
+**Update**: Since FileMaker Server 19.3.\* there is a possibility to read and analyze log files directly in the FileMaker Server user interface. In my opinion, it is still not a good way to do it.
 
 ## Prerequirements
 
@@ -153,8 +153,8 @@ ACCEPT     tcp  --  anywhere             anywhere             tcp dpt:2399 ctsta
 ACCEPT     tcp  --  anywhere             anywhere             tcp dpt:gds-db ctstate NEW
 ...
 ```
-where <code>gds-db</code> is indicating the open port 3050.
 
+where <code>gds-db</code> is indicating the open port 3050.
 
 ### Additional Info
 
@@ -185,6 +185,7 @@ git clone https://github.com/agametis/fms-logviewer-backend.git
 2. Entpacke in ein Verzeichnis an beliebiger Stelle auf dem Rechner, auf dem der FileMaker Server installiert ist oder gehe in das mit <code>git</code> erzeugte Verzeichnis
 3. Ersetze/bearbeite alle Dateien im "encryption" Unterverzeichnis
 4. Im Hauptverzeichnis der Anwendung die Datei ".env-example" auf der Kommandozeile in ".env" umbenennen
+
 - unter Windows:
 
 ```bash
@@ -213,6 +214,7 @@ npm install
 ```bash
 npm start
 ```
+
 ### Firewall unter Linux
 
 Im Moment läuft FileMaker Server auf Ubuntu 18.04 LTS. In der Standardkonfiguration is der Port 3050 geschlossen. Um den Port 3050 in der Firewall zu öffnen, siehe die Anleitung [oben](#firewall-on-linux).
